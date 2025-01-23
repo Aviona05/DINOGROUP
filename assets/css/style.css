@@ -17,24 +17,26 @@ body {
   display: flex;
   justify-content: space-between; 
   align-items: center;
-  padding: 0.5rem 2rem; 
+  padding: 2rem; 
   background-color: rgb(0, 0, 0);
   position: fixed;
   z-index: 1000;
   width: 100%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+  height: 5rem;
 }
 .nav-bar img{
   width: 80px;
   height: 80px;
 }
 .nav-bar a {
+  display: flex;
   position: relative; 
   color: rgb(255, 255, 255);
   text-decoration: none;
-  font-size: 1.5rem;
-  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
   transition: color 0.3s ease;
+  margin:30px;
 }
 
 
@@ -174,9 +176,9 @@ body {
 }
 .card .main .title {
   position: absolute;
-  left: 50%;
+  left: 25%;
   transform: translateX(-50%);
-  top: 90px;
+  top: 70px;
   font-weight: bold;
   font-size: 25px;
   opacity: 0;
