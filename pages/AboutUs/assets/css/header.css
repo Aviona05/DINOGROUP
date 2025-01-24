@@ -1,0 +1,76 @@
+/* Nav Bar */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: transparent;
+  position: fixed;
+  width: 94%;
+  z-index: 1000;
+  top: 0;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.logo-container img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%; /* Ensures the logo is circular */
+}
+
+.brand-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  background: linear-gradient(90deg, #ff69b4, #800080);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+  margin-left: 10px;
+  transform: scale(1);
+  opacity: 0.8; /* Initially less visible */
+  transition: all 0.3s ease-in-out;
+}
+
+.brand-name:hover {
+  text-shadow: 0 0 10pc #ff69b4, 0 0 20px #800080;
+}
+
+.logo-container:hover .brand-name {
+  transform: translateX(0);
+  animation: rollIn 0.6s ease-in-out;
+  visibility: visible;
+  opacity: 1;
+}
+
+@keyframes rollIn {
+ from {
+  transform: translateX(-100%);
+  opacity: 0;
+ }
+ to {
+  transform: translateX(0);
+  opacity: 1;
+ }
+}
+
+/* Navigation Links */
+.nav-links a {
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+  color: #ffffff;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #ff69b4;
+  transition: color 0.3s ease-in-out;
+}
+
