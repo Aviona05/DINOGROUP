@@ -8,8 +8,9 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #0a0c22;
   color: #ffffff;
+  background: transparent;
+
 }
 
 /* Nav Bar */
@@ -18,7 +19,11 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 20px 40px;
-  background-color: #000000;
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
 }
 
 .logo-container {
@@ -26,16 +31,12 @@ body {
   align-items: center;
   position: relative;
   cursor: pointer;
-  overflow: hidden;
 }
 
 .logo-container img {
   height: 50px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.logo-container:hover img {
-  transform: rotate(360deg);
+  width: 50px;
+  border-radius: 50%; /* Ensures the logo is circular */
 }
 
 .brand-name {
@@ -47,10 +48,13 @@ body {
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
   margin-left: 10px;
-  transform: translate(-100%);
-  opacity: 0;
-  animation: none;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform: scale(1);
+  opacity: 0.8; /* Initially less visible */
+  transition: all 0.3s ease-in-out;
+}
+
+.brand-name:hover {
+  text-shadow: 0 0 10pc #ff69b4, 0 0 20px #800080;
 }
 
 .logo-container:hover .brand-name {
@@ -102,243 +106,120 @@ body {
   width: 100%;
 }
 
-/* From Uiverse.io by Smit-Prajapati */ 
-.parent {
-  width: 290px;
-  height: 300px;
-  perspective: 1000px;
+.hero-card {
+  background: #ffffff1a; /* Semi-transparent background */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 30px 40px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px #00000066;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  color: #ffffff;
 }
 
-.card {
-  height: 100%;
-  border-radius: 50px;
-  background: linear-gradient(135deg, rgb(0, 255, 214) 0%, rgb(8, 226, 96) 100%);
-  transition: all 0.5s ease-in-out;
-  transform-style: preserve-3d;
-  box-shadow: rgba(5, 71, 17, 0) 40px 50px 25px -40px, rgba(5, 71, 17, 0.2) 0px 25px 25px -5px;
+.hero-card h1 {
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', serif;
+  color: #ff69b4; /* Vibrant pink for the brand name */
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px #000000;
+  z-index: 1;
+  color: #ffffff;
 }
 
-.glass {
-  transform-style: preserve-3d;
-  position: absolute;
-  inset: 8px;
-  border-radius: 55px;
-  border-top-right-radius: 100%;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.349) 0%, rgba(255, 255, 255, 0.815) 100%);
-  /* -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px); */
-  transform: translate3d(0px, 0px, 25px);
-  border-left: 1px solid white;
-  border-bottom: 1px solid white;
-  transition: all 0.5s ease-in-out;
+.hero-card .description {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 10px;
 }
 
-.content {
-  padding: 100px 60px 0px 30px;
-  transform: translate3d(0, 0, 26px);
+.hero-card .tagline {
+  font-style: italic;
+  font-size: 1rem;
+  color: #ff69b4;
+  margin-bottom: 10px;
 }
 
-.content .title {
-  display: block;
-  color: #00894d;
-  font-weight: 900;
-  font-size: 20px;
+.hero-card .btn {
+  text-decoration: none;
+  padding: 8px 20px;
+  background-color: #ff69b4;
+  color: #ffffff;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
 }
 
-.content .text {
-  display: block;
-  color: rgba(0, 137, 78, 0.7647058824);
-  font-size: 15px;
-  margin-top: 20px;
+.hero-card .btn:hover {
+  background-color: #800080;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.5);
 }
 
-.bottom {
-  padding: 10px 12px;
-  transform-style: preserve-3d;
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
+/* Glowing effect */
+.hero-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px #ff69b499, 0 0 20px #ff69b4cc;
+  background: #ffffff26;
+}
+
+/* Analytics Card */
+.analytics-section {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  transform: translate3d(0, 0, 26px);
+  flex-wrap: wrap;
+  padding: 10px 0;
+  background-image: url(../img/hero-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 100vh;
+  width:100%;
 }
 
-.bottom .view-more {
+.analytics-card {
   display: flex;
+  justify-content: center;
   align-items: center;
-  width: 40%;
-  justify-content: flex-end;
-  transition: all 0.2s ease-in-out;
+  background: #ffffff1a;
+  border-radius: 1px solid #ffffff33;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
+  max-width: 800px;
+  color: #ffffff;
 }
 
-.bottom .view-more:hover {
-  transform: translate3d(0, 0, 10px);
+.analytics-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px #ff69b499, 0 0 20px #ff69b4cc;
+  background: #ffffff26;
 }
 
-.bottom .view-more .view-more-button {
-  background: none;
-  border: none;
-  color: #00c37b;
-  font-weight: bolder;
-  font-size: 12px;
+.analytics-image {
+  width: 150px;
+  margin-right: 20px;
+  border-radius: 10px;
 }
 
-.bottom .view-more .svg {
-  fill: none;
-  stroke: #00c37b;
-  stroke-width: 3px;
-  max-height: 15px;
+.analytics-content h2{
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #ff69b4;
 }
 
-.bottom .social-buttons-container {
-  display: flex;
-  gap: 10px;
-  transform-style: preserve-3d;
+.analytics-content p {
+  font-size: 1.1rem;
 }
 
-.bottom .social-buttons-container .social-button {
-  width: 30px;
-  aspect-ratio: 1;
-  padding: 5px;
-  background: rgb(255, 255, 255);
-  border-radius: 50%;
-  border: none;
-  display: grid;
-  place-content: center;
-  box-shadow: rgba(5, 71, 17, 0.5) 0px 7px 5px -5px;
+.parallax {
+  background-attachment: fixed;
 }
-
-.bottom .social-buttons-container .social-button:first-child {
-  transition: transform 0.2s ease-in-out 0.4s, box-shadow 0.2s ease-in-out 0.4s;
-}
-
-.bottom .social-buttons-container .social-button:nth-child(2) {
-  transition: transform 0.2s ease-in-out 0.6s, box-shadow 0.2s ease-in-out 0.6s;
-}
-
-.bottom .social-buttons-container .social-button:nth-child(3) {
-  transition: transform 0.2s ease-in-out 0.8s, box-shadow 0.2s ease-in-out 0.8s;
-}
-
-.bottom .social-buttons-container .social-button .svg {
-  width: 15px;
-  fill: #00894d;
-}
-
-.bottom .social-buttons-container .social-button:hover {
-  background: black;
-}
-
-.bottom .social-buttons-container .social-button:hover .svg {
-  fill: white;
-}
-
-.bottom .social-buttons-container .social-button:active {
-  background: rgb(255, 234, 0);
-}
-
-.bottom .social-buttons-container .social-button:active .svg {
-  fill: black;
-}
-
-.logo {
-  position: absolute;
-  right: 0;
-  top: 0;
-  transform-style: preserve-3d;
-}
-
-.logo .circle {
-  display: block;
-  position: absolute;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  top: 0;
-  right: 0;
-  box-shadow: rgba(100, 100, 111, 0.2) -10px 10px 20px 0px;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  background: rgba(0, 249, 203, 0.2);
-  transition: all 0.5s ease-in-out;
-}
-
-.logo .circle1 {
-  width: 170px;
-  transform: translate3d(0, 0, 20px);
-  top: 8px;
-  right: 8px;
-}
-
-.logo .circle2 {
-  width: 140px;
-  transform: translate3d(0, 0, 40px);
-  top: 10px;
-  right: 10px;
-  -webkit-backdrop-filter: blur(1px);
-  backdrop-filter: blur(1px);
-  transition-delay: 0.4s;
-}
-
-.logo .circle3 {
-  width: 110px;
-  transform: translate3d(0, 0, 60px);
-  top: 17px;
-  right: 17px;
-  transition-delay: 0.8s;
-}
-
-.logo .circle4 {
-  width: 80px;
-  transform: translate3d(0, 0, 80px);
-  top: 23px;
-  right: 23px;
-  transition-delay: 1.2s;
-}
-
-.logo .circle5 {
-  width: 50px;
-  transform: translate3d(0, 0, 100px);
-  top: 30px;
-  right: 30px;
-  display: grid;
-  place-content: center;
-  transition-delay: 1.6s;
-}
-
-.logo .circle5 .svg {
-  width: 20px;
-  fill: white;
-}
-
-.parent:hover .card {
-  transform: rotate3d(1, 1, 0, 30deg);
-  box-shadow: rgba(5, 71, 17, 0.3) 30px 50px 25px -40px, rgba(5, 71, 17, 0.1) 0px 25px 30px 0px;
-}
-
-.parent:hover .card .bottom .social-buttons-container .social-button {
-  transform: translate3d(0, 0, 50px);
-  box-shadow: rgba(5, 71, 17, 0.2) -5px 20px 10px 0px;
-}
-
-.parent:hover .card .logo .circle2 {
-  transform: translate3d(0, 0, 60px);
-}
-
-.parent:hover .card .logo .circle3 {
-  transform: translate3d(0, 0, 80px);
-}
-
-.parent:hover .card .logo .circle4 {
-  transform: translate3d(0, 0, 100px);
-}
-
-.parent:hover .card .logo .circle5 {
-  transform: translate3d(0, 0, 120px);
-}
-
-
 /*footer*/
 
 
