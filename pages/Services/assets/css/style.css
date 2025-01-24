@@ -3,64 +3,47 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   
-   
 }
 
 body {
+  font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: #000000;
 
 }
 
-.nav-bar {
-  display: flex;
-  align-items: center; 
-  justify-content: space-between;
-  background-color: #000000; 
-  padding: 5px 40px; 
-  height: 90px;
-  position: fixed;
-  width: 100%;
-}
-
-.nav-bar img {
-  height: 90px; 
-  object-fit: cover; 
-}
-
-.nav-links {
-  display: flex; 
-}
-
-.nav-links a {
-  display: flex;
-  text-decoration: none;
-  padding: 1.3rem 2rem;
-  font-size: 25px;
-  color: white; 
-  position: relative;
-  z-index: 1;
-  transition: color 0.3s, background-color 0.3s;
-}
-
-.nav-links a:hover {  
-  color: #ffffff; 
-  background-color: #a90ade85; 
-}
 
 .main-card{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  gap: 10%;
-  background-image: url(../img/bg.png);
+  background-image: url(../img/bg.jpeg);
   background-size: cover;
+  background-position: fixed;
+}
+.main-card h1 {
+  font-size: 60px;
+  color: white;
+  margin-top: 50px;
+  margin-left: 10px;
+}
+.main-card p {
+  display: flex;
+  font-size: 20px;
+  color: white;
+  text-align:end;
+  margin-top: 30px;
+  margin-left: 70px;
+}
+.card-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
 }
 .card {
-  width: 300px;
-  height: 400px;
+  width: 200px;
+  height: 300px;
   background: #171717;
   display: flex;
   justify-content: center;
@@ -70,7 +53,13 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
+  transition: 0.5s;
+  margin-left: 60px;
+  margin-top: 80px;
 
+}
+.card:hover{
+  transform: scale(1.2);
 }
 
 .card .content {
@@ -87,8 +76,8 @@ body {
   position: relative;
 }
 .card .content img{
-  width: 290px;
-  height: 390px;
+  width: 190px;
+  height: 290px;
   object-fit: cover;
   position: absolute;
   transition: transform 0.5s;
@@ -183,3 +172,134 @@ body {
   }
 }
 
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Info Section */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px;
+  background-image: url(../img/bg2.jpg);
+ 
+}
+
+/* Section Header */
+.info h1 {
+  font-size: 60px;
+  margin-bottom: 15px;
+  color: #ffffff;
+  font-weight: 600;
+  row-gap: 25px;
+}
+
+/* AI Section */
+.AI {
+  background-color: #eaf0f100;
+  padding: 25px;
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgb(232, 38, 250);
+  
+}
+
+.AI h1 {
+  color: #ba06b1;
+  font-size: 1.8rem;
+}
+
+/* Blockchain Section */
+.Blockchain {
+  background-color: #eaf0f100;
+  padding: 25px;
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgb(232, 38, 250);
+}
+
+.Blockchain h1 {
+  color: #277aae;
+  font-size: 1.8rem;
+}
+
+/* IoT Section */
+.IoT {
+  background-color: #eaf0f100;
+  padding: 25px;
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgb(232, 38, 250);
+}
+
+.IoT h1 {
+  color: #8e44ad;
+  font-size: 1.8rem;
+}
+
+/* Paragraph Styling */
+p {
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .info {
+      padding: 20px;
+  }
+
+  .info h1 {
+      font-size: 1.5rem;
+  }
+
+  .AI, .Blockchain, .IoT {
+      padding: 15px;
+  }
+
+  .AI h1, .Blockchain h1, .IoT h1 {
+      font-size: 1.5rem;
+  }
+}
+
+/* Hover Effects */
+.AI:hover, .Blockchain:hover, .IoT:hover {
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+.video a {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #d105ff62;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgb(240, 77, 255);
+}
+
+.video a:hover {
+  background-color: #ca79e647;
+  border-radius: 10px;
+
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .iot-content h1 {
+    font-size: 2rem;
+  }
+
+  .iot-content p {
+    font-size: 1rem;
+  }
+
+  .video a {
+    font-size: 0.9rem;
+  }
+
+}
